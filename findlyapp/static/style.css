@@ -1,0 +1,1006 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "inter", sans-serif;
+  background-color: #f5f7fa;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  color: white;
+  background-image: url(Assets/campus.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+li,
+a {
+  text-decoration: none;
+  list-style: none;
+  color: white;
+}
+.home {
+  height: 100vh;
+  background: linear-gradient(135deg, #fffdfd00 10%, #4d6bfe 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 86%, 0% 100%);
+  
+}
+.nabar-container {
+  width: 100%;
+  height: 100px;
+  padding: 1rem;
+}
+.softBG {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.468) 0%,
+    rgba(0, 0, 0, 0.77) 100%
+  );
+  width: 100%;
+  height: 114.6vh;
+}
+.top-navbar-container {
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5rem;
+}
+.top-navbar-containerReturn {
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 5rem;
+}
+.bi-person-circle {
+  font-size: 35px;
+  color: #4d6bfe;
+  cursor: pointer;
+  display: none;
+}
+.findlyLogo {
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+}
+.middle-navbar-container {
+  width: 100%;
+  margin-top: 8rem;
+}
+.middle-navbar-container .headtextBrand {
+  text-align: center;
+  font-size: 7rem;
+  color: white;
+}
+.findlyOverviewtext {
+  text-align: center;
+  color: lightgray;
+  width: 50%;
+  justify-self: center;
+}
+.headtextBrand span {
+  color: #4d6bfe;
+}
+.buttom-navbar-container {
+  justify-self: center;
+  margin-top: 15px;
+}
+.buttom-nav-menu {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  background-color: #f5f7fa15;
+  backdrop-filter: blur(16px);
+  padding: 6px 10px;
+  border-radius: 15px;
+  box-shadow: 0 0 1.5px rgba(0, 0, 0, 0.537);
+}
+.button-item-menu {
+  font-size: 1.1rem;
+  color: white;
+  font-weight: 400;
+  cursor: pointer;
+  transition: 400ms ease-in-out;
+  padding: 5px 8px;
+  border-radius: 15px;
+  backdrop-filter: blur(16px);
+}
+.button-item-menu:hover {
+  background-color: #4d6afed9;
+}
+.left-side-navbar {
+  position: fixed;
+  top: 0;
+  width: 60%;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.582);
+  backdrop-filter: blur(10px);
+  height: 100%;
+  display: none;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.39);
+  z-index: 999;
+}
+.right-side-navbar {
+  position: fixed;
+  top: 4rem;
+  right: 1rem;
+  width: 22%;
+  background-color: rgba(0, 0, 0, 0.582);
+  backdrop-filter: blur(10px);
+  height: 40%;
+  transition: 1s ease-in-out;
+  border-radius: 16px;
+  padding: 1.5rem 1rem;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+}
+.hidden {
+  display: none;
+}
+.right-side-navbar .UserWelkom {
+  color: white;
+  text-align: center;
+  font-size: 1.8rem;
+}
+.userAccount-Options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 1rem;
+  justify-self: center;
+  text-align: center;
+  width: 100%;
+}
+.userAccount-Options .options {
+  color: white;
+  font-size: 16.5px;
+  background-color: #f5f7fa15;
+  padding: 8px 8px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: 400ms ease-in-out;
+  width: 100%;
+}
+.userAccount-Options .options1 {
+  text-decoration: underline;
+  cursor: pointer;
+  color: white;
+}
+.userAccount-Options .options:hover {
+  background-color: #f5f7faa3;
+  color: black;
+}
+.pforUser {
+  text-align: center;
+  color: white;
+}
+.logoAndexit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+}
+.bi-x-lg {
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  transition: 400ms ease-in-out;
+}
+.bi-x-lg:hover {
+  color: lightgray;
+}
+.left-side-navbar hr {
+  border-top: none;
+  border-left: none;
+  width: 80%;
+  justify-self: center;
+  margin-top: 10px;
+}
+.left-side-navbar .menu {
+  margin-top: 2rem;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+}
+.left-side-navbar .menu .items {
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-align: center;
+  transition: 400ms ease-in-out;
+}
+.userOption {
+  width: 23rem;
+  height: 6.8rem;
+  background-color: whitesmoke;
+  border-radius: 16px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.377);
+  padding: 1rem;
+  border-left: #4d6bfe 5px solid;
+  cursor: pointer;
+  transition: 400ms ease-in-out;
+  backdrop-filter: blur(16px);
+}
+.userOption:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.492);
+  background-color: transparent;
+}
+.userOptionContainer {
+  margin-top: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+.userOptionContainer .returnItem {
+  color: #4d6bfe;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+.returnP {
+  color: rgb(102, 102, 102);
+  font-weight: 400;
+  font-size: 15px;
+}
+.userOptionContainer span {
+  color: black;
+}
+.bi-list-nested {
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: 400ms ease-in-out;
+  display: none;
+}
+.bi-list-nested:hover {
+  color: black;
+}
+.forResp {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.aboutUsHeading {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 350;
+  margin-top: 5rem;
+  color: black;
+}
+.aboutUsBrief {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+.briefItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.picture {
+  width: 23rem;
+  height: 15rem;
+  border-radius: 16px;
+  z-index: 1;
+  position: relative;
+  border-left: #4d6bfe 5px solid;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.488);
+  cursor: pointer;
+}
+.softpic:hover {
+  background-color: rgba(0, 0, 0, 0.848);
+}
+.picture:nth-child(1) {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url(Assets/return.jpg);
+}
+.picture:nth-child(2) {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url(Assets/view.png);
+}
+.shortBrief {
+  width: 50%;
+  font-size: 1.1rem;
+  color: rgb(52, 52, 52);
+}
+.softpic {
+  transition: 200ms ease-in-out;
+  background-color: rgba(0, 0, 0, 0.595);
+  height: 100%;
+  width: 100%;
+  border-radius: 16px;
+}
+.bi-arrow-return-right,
+.bi-search,
+.bi-exclamation-triangle {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 2rem;
+  color: #ffffff;
+}
+.title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 0;
+  justify-self: center;
+  align-self: center;
+  font-size: 2.5rem;
+  color: white;
+  font-weight: 300;
+}
+
+.downloadApp {
+  width: 80%;
+  height: 80px;
+  background-color: #4d6bfe;
+  margin-top: 5rem;
+  justify-self: center;
+  border-radius: 16px;
+  border-left: 5px #ffffff solid;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  align-items: center;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.538);
+}
+.downloadApp input {
+  padding: 1rem 5rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: 400ms ease-in-out;
+}
+.downloadApp input:hover {
+  background-color: lightgray;
+}
+.downloadtext {
+  font-size: 1.8rem;
+  color: white;
+  font-weight: 370;
+}
+.bi-phone {
+  color: rgb(255, 255, 255);
+  font-size: 2rem;
+}
+.submitDownload {
+  display: flex;
+  align-items: center;
+}
+.messageUs {
+  font-weight: 370;
+  text-align: center;
+  color: #4d6bfe;
+}
+.userFields {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  padding: 0 2rem;
+}
+.userFields label {
+  color: black;
+}
+.userFields .bi {
+  color: black;
+  font-size: 20px;
+}
+.userFields textarea {
+  resize: none;
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 16px;
+  background-color: lightgray;
+  border-radius: 5px;
+}
+.sendMessagColor {
+  color: black;
+}
+.userFields .userInputs {
+  color: black;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 16px;
+  width: 100%;
+}
+.Signin_userInputs {
+  color: white;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 16px;
+  width: 100%;
+}
+.contactContainer {
+  width: 34rem;
+  height: 40rem;
+  margin-top: 5rem;
+  justify-self: left;
+  border-radius: 16px;
+  border-left: 5px #4d6bfe solid;
+  background-color: rgba(255, 255, 255, 0.595);
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 9.5rem;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.571);
+}
+.sendMessage {
+  padding: 14px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background-color: #4d6bfe;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 400ms ease-in-out;
+  font-size: 17px;
+  margin-top: 5px;
+}
+.sendMessage:hover {
+  background-color: #4d6afeaa;
+}
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.footerContainer {
+  width: 100%;
+  height: 15.5rem;
+  background-color: #000000bd;
+  margin-top: 5rem;
+}
+.innerfooter {
+  display: flex;
+  padding: 2.5rem 2rem;
+  align-items: center;
+  justify-content: center;
+  gap: 15rem;
+}
+.innerfooter ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.ListMenu {
+  cursor: pointer;
+  color: lightgray;
+}
+.ListMenu:hover {
+  color: white;
+}
+.innerfooter ul .bi {
+  font-size: 20px;
+  color: #4d6bfe;
+}
+.imageLogo {
+  background-image: url(Assets/findlyNobg.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 70px;
+  height: 70px;
+}
+.leftfooter p {
+  width: 20%;
+  color: lightgray;
+  font-size: 14px;
+  margin-top: 5px;
+}
+.footer hr {
+  border-top: none;
+  width: 70%;
+  justify-self: center;
+  border-color: lightgray;
+  margin-top: 1.5rem;
+}
+.footer .rights {
+  margin-top: 10px;
+  text-align: center;
+}
+.middlefooterinfor {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.rightfooterinfor {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.aboutP {
+  width: 64%;
+  color: rgb(122, 122, 122);
+  text-align: center;
+  justify-self: center;
+  margin-top: 1.5rem;
+  font-size: 17px;
+  margin-bottom: 1rem;
+}
+/* ----------------------------SIGN IN & SIGN UP-------------------------------- */
+.signin {
+  width: 100%;
+  height: 100vh;
+  transition: 400ms ease-in-out;
+}
+.SigninContainer {
+  width: 28rem;
+  height: 35rem;
+  justify-self: center;
+  margin-top: 1rem;
+  border-radius: 16px;
+  padding: 1rem 1rem;
+  border-left: 5px #4d6bfe solid;
+  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.571);
+  backdrop-filter: blur(7px);
+  transition: 400ms ease-in-out;
+}
+.SigninContainer hr {
+  border-top: none;
+  border-color: lightgray;
+  /* margin-top: 1rem; */
+}
+.signinFields {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.signupOrforgotP {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+}
+.signupOrforgotP p {
+  color: #4d6bfe;
+  font-size: 14px;
+  font-size: 370;
+  cursor: pointer;
+}
+.btnSubmit {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+.Loginbtn {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background-color: #4d6bfe;
+  cursor: pointer;
+  color: white;
+  transition: 400ms ease-in-out;
+  border: 1px solid #4d6bfe;
+}
+.Loginbtn:hover {
+  background-color: rgba(0, 0, 0, 0.103);
+}
+.signinFields .bi {
+  font-size: 1.2rem;
+}
+.Signin_userInputs {
+  color: white;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 16px;
+  width: 100%;
+}
+.userinputWrapper {
+  border-radius: 5px;
+  border: 1px solid #4d6bfe;
+  background-color: rgba(0, 0, 0, 0.103);
+  padding: 0.5rem;
+  gap: 0.5rem;
+  display: flex;
+}
+
+.signinTitle {
+  font-weight: 360;
+  text-align: center;
+}
+/* -----------------------------RETURN ITEM--------------------------- */
+.successMessage {
+  color: green;
+  font-size: 16px;
+}
+.ReturnItemContainer {
+  width: 40rem;
+  height: 38rem;
+  justify-self: center;
+  margin-top: 1rem;
+  border-radius: 16px;
+  padding: 1rem 1rem;
+  border-left: 5px #4d6bfe solid;
+  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.571);
+  backdrop-filter: blur(7px);
+}
+.ReturnItemContainer .returnItemFields {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.ReturnItemContainer input {
+  outline: none;
+  color: white;
+}
+#submititembtn {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background-color: #4d6bfe;
+  cursor: pointer;
+  color: white;
+  transition: 400ms ease-in-out;
+  border: 1px solid #4d6bfe;
+  font-size: 17px;
+  width: 100%;
+}
+#submititembtn:hover {
+  background-color: rgba(0, 0, 0, 0.103);
+}
+#itemImage {
+  cursor: pointer;
+}
+/* ------------------------------------FOUND ITEMS--------------------- */
+.foundItemContainer {
+  width: 60rem;
+  height: 40rem;
+  justify-self: center;
+  margin-top: 1rem;
+  border-radius: 16px;
+  padding: 1rem 1rem;
+  border-left: 5px #4d6bfe solid;
+  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.571);
+  backdrop-filter: blur(7px);
+  align-items: center;
+}
+form .searchwrapper {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.503);
+  padding: 8px;
+  justify-self: center;
+  display: flex;
+  gap: 1rem;
+  border: 1px solid #4d6bfe;
+  border-radius: 10px;
+  align-items: center;
+}
+.searchwrapper .bi {
+  font-size: 1.5rem;
+}
+.searchwrapper input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  font-size: 17px;
+}
+.itemsReported {
+  width: 90%;
+  height: 100%;
+  border: 1px solid #4d6bfe;
+  background-color: rgba(0, 0, 0, 0.503);
+  border-radius: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 1rem;
+  gap: 1rem;
+  overflow-y: scroll;
+}
+.itemsReported::-webkit-scrollbar {
+  display: none;
+}
+.itemReported {
+  width: 15rem;
+  background-color: #92929266;
+  height: 24rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  box-shadow: 0 0 5px black;
+  cursor: pointer;
+}
+.itemImageReported {
+  width: 85%;
+  height: 50%;
+  background-color: #4d6bfe;
+  border-radius: 10px 10px 0 0;
+  justify-self: center;
+  align-self: center;
+}
+.itemImageReported img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 10px 0 0;
+}
+.itemReported .itemdetails {
+  margin-top: 1.5rem;
+  margin-left: 1.1rem;
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+}
+.itemReported .detail {
+  font-size: 16px;
+  font-weight: 330;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.itemdetails hr {
+  border-bottom: none;
+  width: 70%;
+}
+.itemdetails .bi {
+  color: #4d6bfe;
+}
+.topSignIn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+/* ---------- Responsive Design ---------- */
+
+/* Tablets and small desktops */
+@media (max-width: 1024px) {
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  .middle-navbar-container .headtextBrand {
+    font-size: 5rem;
+  }
+  .findlyOverviewtext {
+    width: 80%;
+    font-size: 0.9rem;
+  }
+  .button-item-menu {
+    display: none;
+  }
+  .bi-list-nested {
+    display: block;
+  }
+  .userOptionContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 6rem;
+    gap: 1rem;
+  }
+  .userOption {
+    width: 18rem;
+    height: 5.5rem;
+    padding: 0.4rem;
+  }
+  .userOptionContainer .returnItem {
+    font-weight: 380;
+    font-size: 1.2rem;
+  }
+  .returnP {
+    font-weight: 380;
+    font-size: 0.9rem;
+  }
+  .aboutUsHeading {
+    font-size: 1.6rem;
+  }
+  .aboutUsBrief {
+    margin-top: 1rem;
+    gap: 3rem;
+  }
+  .briefItem {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+  }
+  .picture {
+    width: 18rem;
+    height: 10rem;
+  }
+  .title {
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 300;
+  }
+  .aboutP {
+    width: 80%;
+    margin-top: 0.1rem;
+    font-size: 0.85rem;
+    margin-bottom: 0.1rem;
+    /* text-align: left; */
+  }
+  .shortBrief {
+    width: 72%;
+    font-size: 0.85rem;
+  }
+  .downloadApp {
+    width: 80%;
+    height: 80px;
+    justify-content: space-between;
+    padding: 1rem;
+    align-items: center;
+  }
+  .downloadApp input {
+    padding: 0.5rem 2rem;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: 400ms ease-in-out;
+  }
+  .downloadtext {
+    font-size: 1rem;
+  }
+  .bi-phone {
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+  }
+  .submitDownload {
+    display: flex;
+    align-items: center;
+  }
+  .contactContainer {
+    width: 26rem;
+    height: 38rem;
+    justify-self: center;
+    gap: 1rem;
+    margin-left: 0rem;
+    margin-top: 1rem;
+  }
+  .sendMessage {
+    padding: 0.8rem;
+  }
+  .footerContainer {
+    width: 100%;
+    height: 15rem;
+    margin-top: 5rem;
+  }
+  .innerfooter {
+    display: flex;
+    padding: 2.5rem 1rem;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .innerfooter ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .ListMenu:hover {
+    color: white;
+  }
+  .innerfooter ul .bi {
+    font-size: 1rem;
+  }
+  .imageLogo {
+    width: 50px;
+    height: 50px;
+  }
+  .footer hr {
+    border-top: none;
+    width: 70%;
+    justify-self: center;
+    margin-top: 1rem;
+  }
+  .footer .rights {
+    margin-top: 10px;
+    text-align: center;
+  }
+  .middlefooterinfor {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .softBG {
+    height: 100vh;
+  }
+  .ReturnItemContainer {
+    width: 26rem;
+    height: 36.8rem;
+    margin-top: 0.1rem;
+    gap: 1rem;
+  }
+  .ReturnItemContainer .returnItemFields {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .ReturnItemContainer input {
+    outline: none;
+    color: white;
+  }
+  #submititembtn {
+    padding: 0.5rem;
+  }
+  .signinTitle {
+    font-weight: 360;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  .foundItemContainer {
+    width: 32rem;
+    height: 38rem;
+    justify-self: center;
+    margin-left: 0;
+    margin-top: 0;
+    gap: 1rem;
+  }
+  .itemReported {
+    width: 12rem;
+    height: 18rem;
+  }
+  .itemReported .detail {
+    font-size: 1rem;
+  }
+  .itemdetails .bi {
+    color: #4d6bfe;
+  }
+  .ListMenu {
+    font-size: 0.8rem;
+  }
+  .bi-arrow-return-right,
+.bi-search,
+.bi-exclamation-triangle {
+  font-size: 1.5rem;
+}
+.findlyLogo {
+  width: 50px;
+  height: 50px;
+
+}
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+}

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+{%load static%}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="icon" href="{% static 'Assets/findlyLogo.png'%}" type="image/x-icon">
+    <title>Findly - Campus Lost & Found Link</title>
+</head>
+
+<body>
+        <div class="softBG">
+            <nav class="nabar-container">
+                <div class="top-navbar-container">
+                    <img href="{%url 'home'%}" src="{% static 'Assets/findlyNobg.png'%}" alt="image not found"
+                        class="findlyLogo">
+                    <!-- <div class="forResp"> -->
+                        <ul class="buttom-nav-menu">
+                            <li class="button-item-menu">
+                                Home
+                            </li>
+                            <li class="button-item-menu">
+                                <a href="#about">About</a>
+                            </li>
+                            <li class="button-item-menu">
+                                <a href="#contact">Contact</a>
+                            </li>
+                        </ul>
+                        <i class="bi bi-list-nested" id="bi-list-nested"></i>
+                    <!-- </div> -->
+                    <!-- <div class=""></div> -->
+                    <i class="bi bi-person-circle" id="person-circle"></i>
+                </div>
+
+            </nav>
+
+            <div class="middle-navbar-container">
+                <h1 class="headtextBrand">Findly<span>.</span></h1>
+                <p class="findlyOverviewtext">
+                    Findly is a digital lost-and-found platform designed specifically for universities and colleges,
+                    helping students, staff, and campus visitors quickly report, locate, and recover lost items.
+                </p>
+            </div>
+            <nav class="left-side-navbar" id="left-side-navbar">
+
+                <div class="logoAndexit">
+                    <img src="{% static 'Assets/findlyLogo.png'%}" alt="image not found" class="findlyLogo">
+                    <i class="bi bi-x-lg"></i>
+                </div>
+                <hr>
+                <ul class="menu">
+                    <li class="items">
+                        <a href="">Home</a>
+                    </li>
+                    <li class="items">
+                        <a href="">About</a>
+                    </li>
+                    <li class="items">
+                        <a href="">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="right-side-navbar hidden" id="side-navbar">
+                <div class="topSignIn">
+                    <i class="bi bi-x-lg closNav"></i>
+                    <h1 class="UserWelkom">
+                        Welkom
+                    </h1>
+                </div>
+
+                <p class="pforUser">
+                    Log in or sign up for better experience.
+                </p>
+                <ul class="userAccount-Options">
+                    <!-- <a href="{% url 'signin' %}" target="_blank"> -->
+                    <li class="options">
+                        Login
+                    </li>
+                    </a>
+                    <a href="{% url 'signup'%}" target="_blank">
+                        <li class="options">
+                            Sign Up
+                        </li>
+                    </a>
+                    <a href="#" target="_blank">
+                        <li class="options1">
+                            Stay logged out
+                        </li>
+                    </a>
+                </ul>
+            </nav>
+            <div class="userOptionContainer">
+                <a href="{% url 'returnitem'%}">
+                    <div class="userOption">
+                        <h1 class="returnItem">
+                            Return Item
+                        </h1>
+                        <p class="returnP">
+                            <span>Found something?</span><br>
+                            Return lost items easily with Findly — snap, post, reunite.
+                        </p>
+                    </div>
+                </a>
+
+                <a href="{% url 'founditems'%}">
+                    <div class="userOption">
+                        <h1 class="returnItem">
+                            Found Items
+                        </h1>
+                        <p class="returnP">
+                            <span>Lost something?</span><br>
+                            Browse reported items on Findly — search, spot, reclaim.
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    <section class="about" id="about">
+        <h1 class="aboutUsHeading">
+            About
+        </h1>
+        <p class="aboutP">Findly is a digital lost-and-found platform designed specifically for universities and
+            colleges, helping students, staff, and campus visitors quickly report, locate, and recover lost items.
+            The platform connects people in real time, making it easy to post details, share images, and track the
+            status of missing belongings — all in one centralized hub.</p>
+        <div class="aboutUsBrief">
+            <div class="briefItem">
+                <div class="picture">
+                    <div class="softpic">
+                        <i class="bi bi-arrow-return-right"></i>
+                    </div>
+                    <h1 class="title">
+                        Return
+                    </h1>
+                </div>
+                <p class="shortBrief">
+                    Found something on campus?
+                    Don’t let it sit around or get tossed—help it find its way home with Campus Find! Whether it’s a
+                    water bottle, student ID, headphones, or even a backpack, you can easily post a photo and a quick
+                    description so the owner can claim it.
+                    <br>
+                    <br>
+                    It only takes a minute to make someone’s day. Just snap a pic, fill in a few details, and let Findly
+                    do the rest. It’s the easiest way to return lost items on campus—and you stay anonymous if you
+                    want to.
+                </p>
+            </div>
+            <div class="briefItem">
+                <div class="picture">
+                    <div class="softpic">
+                        <i class="bi bi-search"></i>
+                    </div>
+                    <h1 class="title">
+                        Found Items
+                    </h1>
+
+                </div>
+                <p class="shortBrief">
+                    With Findly, you can browse all lost and found reports in one easy-to-use place. No more
+                    hunting through random bulletin boards, group chats, or campus offices—everything is organized and
+                    searchable, right at your fingertips.
+                    <br>
+                    <br>
+                    Whether you’ve lost your favorite hoodie, a calculator before your exam, or your entire backpack (it
+                    happens), Findly makes it simple to check if someone’s already turned it in. And if you’ve
+                    found something lying around, you can quickly see if anyone has reported it missing.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="downloadApp">
+        <h1 class="downloadtext">
+            Download Findly App
+        </h1>
+        <div class="submitDownload">
+            <i class="bi bi-phone"></i>
+            <input type="submit" value="DOWNLOAD">
+        </div>
+
+    </div>
+    <section class="contact" id="contact">
+        <h1 class="aboutUsHeading">
+            Contact
+        </h1>
+        <form action="" method="POST">
+            {%csrf_token%}
+            <div class="contactContainer">
+                <h1 class="messageUs">Message Us</h1>
+                <div class="userFields">
+                    <div class="userinputWrapper"><i class="bi bi-person"></i><input type="text" name="userfirstname"
+                            class="userInputs" required placeholder="Name"></div>
+                    <div class="userinputWrapper"><i class="bi bi-envelope"></i><input type="text" name="useremail"
+                            class="userInputs" required placeholder="Email"></div>
+                    <div class="userinputWrapper"><i class="bi bi-telephone"></i><input type="text" name="userphone"
+                            class="userInputs" required placeholder="Phone"></div>
+                    <div class="userinputWrapper">
+                        <textarea rows="8" cols="100%" placeholder="Message" class="userInputs" name="usermessage"></textarea>
+                    </div>
+                    <input type="submit" value="Send Us Message" class="sendMessage">
+                </div>
+    
+            </div>
+        </form>
+        
+
+    </section>
+    <section class="footer">
+        <div class="footerContainer">
+            <div class="innerfooter">
+                <div class="leftfooter">
+                    <a href="#">
+                        <div class="imageLogo">
+                        </div>
+                    </a>
+                </div>
+                <ul class="list">
+                    <li class="ListMenu">
+                        <a href="#"><i class="bi bi-house-door"></i> Home</a>
+                    </li>
+                    <li class="ListMenu">
+                        <a href="#about"><i class="bi bi-info"></i> About Us</a>
+                    </li>
+                    <li class="ListMenu">
+                        <a href="#contact"> <i class="bi bi-phone"></i> Contact Us</a>
+                    </li>
+
+                </ul>
+                <ul class="list">
+                    <li class="ListMenu">
+                        <a href="{% url 'signup'%}">Sign Up</a>
+                    </li>
+                    <li class="ListMenu">
+                        <a href="{% url 'signin'%}">Sign In</a>
+                    </li>
+
+                </ul>
+                <ul class="list">
+                    <li class="ListMenu">
+                        <i class="bi bi-facebook"></i> Follow Us on Facebook
+                    </li>
+                    <li class="ListMenu">
+                        <i class="bi bi-instagram"></i> Follow Us on Instagram
+                    </li>
+                </ul>
+            </div>
+            <hr>
+            <p class="rights">©2025 Findly. All Rights Reserved.</p>
+    </section>
+    <script src="{% static 'script.js'%}"></script>
+</body>
+
+</html>
