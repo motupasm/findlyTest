@@ -125,7 +125,7 @@ def singupItemviews(request):
             [email],
             fail_silently=True,
         )
-        return redirect("signin")
+        return redirect("signup")
     return render(request, "signup.html")
 
 
