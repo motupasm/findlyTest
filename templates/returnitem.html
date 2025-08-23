@@ -8,60 +8,62 @@
     <link rel="stylesheet" href="{% static 'style.css'%}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link rel="icon" href="{% static 'Assets/findlyLogo.png'%}" type="image/x-icon">
-    <title>Findly - Sign Up</title>
+    <title>Findly - return item</title>
 </head>
 
 <body>
-        <div class="softBG signin">
-            <nav class="nabar-container">
-                <div class="top-navbar-containerReturn">
-                    <a href="{%url 'home'%}"><img src="{%static 'Assets/findlyNobg.png'%}" alt="image not found"
-                            class="findlyLogo"></a>
+    <div class="softBG signin">
+        <nav class="nabar-container">
+            <div class="top-navbar-containerReturn">
+                <a href="{%url 'home'%}"><img src="{%static 'Assets/findlyNobg.png'%}" alt="image not found"
+                        class="findlyLogo"></a>
+            </div>
+        </nav>
+        <div class="ReturnItemContainer">
+            <h1 class="signinTitle">
+                Return Item
+            </h1>
+            {%for message in messages%}
+            <div class="signupOrforgotP">
+                <a href="{% url 'founditems'%}">
+                    <p>{{message}}</p>
+                </a>
+            </div>
+            {%endfor%}
+            <form action="" method="POST" enctype="multipart/form-data">
+                <div class="returnItemFields">
+                    {%csrf_token%}
+                    <label for="">Item Type</label><input type="text" name="item_type" class="userinputWrapper" required
+                        placeholder="Laptop , Wallet , Student Card">
+                    <label for="">Item Description</label><input type="text" name="item_description"
+                        class="userinputWrapper" required placeholder="Asus gray laptop">
+                    <label for="">Current Location</label><input type="text" name="location_found"
+                        class="userinputWrapper" required placeholder="Student administrator , Health science Building">
+                    <label for="">Date Found</label><input type="date" name="date_found" class="userinputWrapper"
+                        required>
+                    <label for="">Upload Image</label><input type="file" name="item_image" id="itemImage">
+                    <input type="submit" value="Submit Item" class="Loginbtn">
                 </div>
-            </nav>
-            <div class="ReturnItemContainer">
-                <h1 class="signinTitle">
-                    Return Item
-                </h1>
-                {%for message in messages%}
+                <br>
                 <div class="signupOrforgotP">
                     <a href="{% url 'founditems'%}">
-                        <p>{{message}}</p>
+                        <p>View Found Items</p>
+                        <a href="{% url 'logout'%}">
+                            <p>Logout</p>
+                        </a>
+
                     </a>
                 </div>
-                {%endfor%}
-                <form action="" method="POST" enctype="multipart/form-data">
-
-                    <div class="returnItemFields">
-                        {%csrf_token%}
-                        <label for="">Item Type</label><input type="text" name="item_type" class="userinputWrapper"
-                            required placeholder="Laptop , Wallet , Student Card">
-                        <label for="">Item Description</label><input type="text" name="item_description"
-                            class="userinputWrapper" required placeholder="Asus gray laptop">
-                        <label for="">Current Location</label><input type="text" name="location_found"
-                            class="userinputWrapper" required
-                            placeholder="Student administrator , Health science Building">
-                        <label for="">Date Found</label><input type="date" name="date_found" class="userinputWrapper"
-                            required>
-                        <label for="">Upload Image</label><input type="file" name="item_image" id="itemImage">
-                    </div>
-                    <br>
-                    <input type="submit" value="Submit Item" id="submititembtn"><br><br>
-                    <div class="signupOrforgotP">
-                        <a href="{% url 'founditems'%}">
-                            <p>View Found Items</p>
-                        </a>
-                    </div>
-                </form>
+            </form>
 
 
-            </div>
         </div>
+    </div>
     <section class="footer">
         <div class="footerContainer">
             <div class="innerfooter">
                 <div class="leftfooter">
-                    <a href="homepage.html">
+                    <a href="{% url 'home'%}">
                         <div class="imageLogo">
                         </div>
                     </a>
@@ -74,16 +76,7 @@
                         <a href="#about"><i class="bi bi-info"></i> About Us</a>
                     </li>
                     <li class="ListMenu">
-                        <a href="#contact"> <i class="bi bi-phone"></i> Contact Us</a>
-                    </li>
-
-                </ul>
-                <ul class="list">
-                    <li class="ListMenu">
-                        <a href="signup.html">Sign Up</a>
-                    </li>
-                    <li class="ListMenu">
-                        <a href="signin.html">Sign In</a>
+                        <a href="{% url 'contact' %}"> <i class="bi bi-phone"></i> Contact Us</a>
                     </li>
 
                 </ul>

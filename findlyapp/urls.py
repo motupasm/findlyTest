@@ -10,6 +10,8 @@ urlpatterns = [
     path("signin/", views.singinItemviews, name="signin"),
     path("signup/", views.singupItemviews, name="signup"),
     path("search/", views.search, name="search"),
+    path("contact/", views.contact, name="contact"),
+    path("logout/", views.logoutviews, name="logout"),
 ]
 
 if settings.DEBUG:

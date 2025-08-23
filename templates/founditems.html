@@ -8,68 +8,71 @@
     <link rel="stylesheet" href="{% static 'style.css'%}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link rel="icon" href="Assets/findlyLogo.png" type="image/x-icon">
-    <title>Findly - Sign Up</title>
+    <title>Findly - view found items</title>
 </head>
 
 <body>
-        <div class="softBG signin">
-            <nav class="nabar-containerReturn">
-                <div class="top-navbar-containerReturn">
-                    <a href="{%url 'home'%}"><img src="{%static 'Assets/findlyNobg.png'%}" alt="image not found"
-                            class="findlyLogo"></a>
+    <div class="softBG signin">
+        <nav class="nabar-containerReturn">
+            <div class="top-navbar-containerReturn">
+                <a href="{%url 'home'%}"><img src="{%static 'Assets/findlyNobg.png'%}" alt="image not found"
+                        class="findlyLogo"></a>
+            </div>
+        </nav>
+        <div class="foundItemContainer">
+
+            <h1 class="signinTitle">
+                Found Items
+            </h1>
+            <form action="{%url 'search'%}" method="POST">
+                <div class="searchwrapper">
+                    {%csrf_token%}
+                    <i class="bi bi-search"></i><input type="search" placeholder="Search by item type or description..."
+                        name="search" required>
                 </div>
-            </nav>
-            <div class="foundItemContainer">
+            </form>
 
-                <h1 class="signinTitle">
-                    Found Items
-                </h1>
-
-                <form action="{%url 'search'%}" method="POST">
-                    <div class="searchwrapper">
-                        {%csrf_token%}
-                        <i class="bi bi-search"></i><input type="search"
-                            placeholder="Search by item type or description..." name="search">
+            <div class="itemsReported">
+                {%for item in allReportedItems%}
+                {%if item.approval%}
+                <div class="itemReported">
+                    <div class="itemImageReported">
+                        {%if item.item_image%}
+                        <img src="{{item.item_image.url}}" alt="" class="image">
+                        {%else%}
+                        <img src="{% static 'Assets/fallback.jpg'%}" alt="" class="image">
+                        {%endif%}
                     </div>
-                </form>
-
-                <div class="itemsReported">
-                    {%for item in allReportedItems%}
-                    <div class="itemReported">
-                        <div class="itemImageReported">
-                            {%if item.item_image%}
-                            <img src="{{item.item_image.url}}" alt="" class="image">
-                            {%else%}
-                            <img src="{% static 'Assets/fallback.jpg'%}" alt="" class="image">
-                            {%endif%}
-                        </div>
-                        <ul class="itemdetails">
-                            <li class="detail">
-                                <i class="bi bi-bookmark"></i> {{item.item_type}}
-                            </li>
-                            <hr>
-                            <li class="detail">
-                                <i class="bi bi-box-seam"></i> {{item.item_description}}
-                            </li>
-                            <hr>
-                            <li class="detail">
-                                <i class="bi bi-geo-alt"></i> {{item.location_found}}
-                            </li>
-                            <hr>
-                            <li class="detail">
-                                <i class="bi bi-calendar-day"></i>{{item.date_found}}
-                            </li>
-                        </ul>
-                    </div>
-                    {%endfor%}
-                </div>
+                    <ul class="itemdetails">
+                        <li class="detail">
+                            <i class="bi bi-bookmark"></i> {{item.item_type}}
+                        </li>
+                        <hr>
+                        <li class="detail">
+                            <i class="bi bi-box-seam"></i> {{item.item_description}}
+                        </li>
+                        <hr>
+                        <li class="detail">
+                            <i class="bi bi-geo-alt"></i> {{item.location_found}}
+                        </li>
+                        <hr>
+                        <li class="detail">
+                            <i class="bi bi-calendar-day"></i>{{item.date_found}}
+                        </li><hr>
+                        <li class="detail">
+                            <i class="bi bi-check2-square"></i></i>Appoved: {{item.approval}}
+                        </li>
+                    </ul>
+                </div>{%endif%}
+                {%endfor%}
             </div>
         </div>
+    </div>
     <section class="footer">
         <div class="footerContainer">
             <div class="innerfooter">
                 <div class="leftfooter">
-                    <a href="homepage.html">
+                    <a href="{% url 'home'%}">
                         <div class="imageLogo">
                         </div>
                     </a>
@@ -82,16 +85,7 @@
                         <a href="#about"><i class="bi bi-info"></i> About Us</a>
                     </li>
                     <li class="ListMenu">
-                        <a href="#contact"> <i class="bi bi-phone"></i> Contact Us</a>
-                    </li>
-
-                </ul>
-                <ul class="list">
-                    <li class="ListMenu">
-                        <a href="signup.html">Sign Up</a>
-                    </li>
-                    <li class="ListMenu">
-                        <a href="signin.html">Sign In</a>
+                        <a href="{% url 'contact' %}"> <i class="bi bi-phone"></i> Contact Us</a>
                     </li>
 
                 </ul>

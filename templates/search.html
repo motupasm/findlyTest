@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{% static 'style.css'%}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link rel="icon" href="Assets/findlyLogo.png" type="image/x-icon">
-    <title>Findly - Sign Up</title>
+    <title>Findly - results</title>
 </head>
 
 <body>
@@ -27,6 +27,7 @@
                 <div class="itemsReported">
                     {%if searched%}
                     {%for search in searched%}
+                    {%if search.approval%}
                     <div class="itemReported">
                         <div class="itemImageReported">
                             {%if search.item_image%}
@@ -53,6 +54,7 @@
                             </li>
                         </ul>
                     </div>
+                    {%endif%}
                     {%endfor%}
                     {%else%}
                     
@@ -60,48 +62,39 @@
                 </div>
             </div>
         </div>
-    <section class="footer">
-        <div class="footerContainer">
-            <div class="innerfooter">
-                <div class="leftfooter">
-                    <a href="homepage.html">
-                        <div class="imageLogo">
-                        </div>
-                    </a>
+        <section class="footer">
+            <div class="footerContainer">
+                <div class="innerfooter">
+                    <div class="leftfooter">
+                        <a href="{% url 'home'%}">
+                            <div class="imageLogo">
+                            </div>
+                        </a>
+                    </div>
+                    <ul class="list">
+                        <li class="ListMenu">
+                            <a href="#"><i class="bi bi-house-door"></i> Home</a>
+                        </li>
+                        <li class="ListMenu">
+                            <a href="#about"><i class="bi bi-info"></i> About Us</a>
+                        </li>
+                        <li class="ListMenu">
+                            <a href="{% url 'contact' %}"> <i class="bi bi-phone"></i> Contact Us</a>
+                        </li>
+    
+                    </ul>
+                    <ul class="list">
+                        <li class="ListMenu">
+                            <i class="bi bi-facebook"></i> Follow Us on Facebook
+                        </li>
+                        <li class="ListMenu">
+                            <i class="bi bi-instagram"></i> Follow Us on Instagram
+                        </li>
+                    </ul>
                 </div>
-                <ul class="list">
-                    <li class="ListMenu">
-                        <a href="#"><i class="bi bi-house-door"></i> Home</a>
-                    </li>
-                    <li class="ListMenu">
-                        <a href="#about"><i class="bi bi-info"></i> About Us</a>
-                    </li>
-                    <li class="ListMenu">
-                        <a href="#contact"> <i class="bi bi-phone"></i> Contact Us</a>
-                    </li>
-
-                </ul>
-                <ul class="list">
-                    <li class="ListMenu">
-                        <a href="signup.html">Sign Up</a>
-                    </li>
-                    <li class="ListMenu">
-                        <a href="signin.html">Sign In</a>
-                    </li>
-
-                </ul>
-                <ul class="list">
-                    <li class="ListMenu">
-                        <i class="bi bi-facebook"></i> Follow Us on Facebook
-                    </li>
-                    <li class="ListMenu">
-                        <i class="bi bi-instagram"></i> Follow Us on Instagram
-                    </li>
-                </ul>
-            </div>
-            <hr>
-            <p class="rights">©2025 Findly. All Rights Reserved.</p>
-    </section>
+                <hr>
+                <p class="rights">©2025 Findly. All Rights Reserved.</p>
+        </section>
     <script src="{% static 'script.js'%}"></script>
 </body>
 

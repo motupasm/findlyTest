@@ -24,10 +24,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-5ki(wtrj-o2qadu0e&5ntz)0-ypm8yz%b(!0z6^yx**1^%qwo^"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
+EMAIL_HOST="smtp.gmail.com"
+EMAIL_PORT=465
+EMAIL_USE_SSL=True
+EMAIL_HOST_USER="empiremashao@gmail.com"
+EMAIL_HOST_PASSWORD="uarg ldde rbwc tfvl"
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,13 +44,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "findlyapp",
 ]
+ 
 
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-EMAIL_USE_TLS = True
-EMAIL_HOST = "smtp.gmail.com"
-EMAIL_HOST_USER = "empiremashao@gmail.com"
-EMAIL_HOST_PASSWORD = "selfntzhnbjsgwyq"
-EMAIL_PORT = 587
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -55,6 +55,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
 ROOT_URLCONF = "findlyprj.urls"
@@ -80,11 +81,13 @@ WSGI_APPLICATION = "findlyprj.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+import dj_database_url
+
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
+    'default': dj_database_url.config(
+        default='postgresql://postgres:URkHijtCXhMEfXvltPPegADspBNBDqkn@ballast.proxy.rlwy.net:45957/railway',
+        conn_max_age=600,
+    )
 }
 
 
@@ -131,3 +134,5 @@ STATIC_ROOT = os.path.join("static")
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+LOGIN_URL = 'signin'

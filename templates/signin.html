@@ -7,94 +7,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'style.css'%}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-    <link rel="icon" href="Assets/findlyLogo.png" type="image/x-icon">
+    <link rel="icon" href="{% static 'Assets/findlyLogo.png'%}" type="image/x-icon">
     <title>Findly - Signin</title>
 </head>
 
 <body>
-
-        <section class="home" id="home">
-            <div class="softBG signin">
-                <nav class="nabar-container">
-                    <div class="top-navbar-containerReturn">
-                        <a href="homepage.html"><img src="{% static'Assets/findlyNobg.png'%}" alt="image not found"
-                                class="findlyLogo"></a>
-                    </div>
-                </nav>
-                <div class="SigninContainer">
-                    <h1 class="signinTitle">
-                        Sign In
-                    </h1>
-                    <p>Sign in to track or report campus items.</p>
-                    <hr>
-                    <div class="signinFields">
-                        <div class="userinputWrapper">
-                            <i class="bi bi-person"></i><input type="text" name="Email" class="Signin_userInputs"
-                                required placeholder="phone number / email">
-                        </div>
-                        <div class="userinputWrapper">
-                            <i class="bi bi-lock"></i><input type="password" name="Email" class="Signin_userInputs"
-                                required placeholder="Password">
-                        </div>
-                        <div class="btnSubmit">
-                            <input type="submit" value="Login" class="Loginbtn">
-                            <div class="signupOrforgotP">
-                                <a href="">
-                                    <p>Forgot password?</p>
-                                </a>
-                                <a href="signup.html">
-                                    <p>Sign Up</p>
-                                </a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
+    <div class="softBG">
+        <nav class="nabar-container">
+            <div class="top-navbar-containerReturn">
+                <a href="{% url 'home' %}"><img src="{% static 'Assets/findlyNobg.png' %}" alt="image not found"
+                        class="findlyLogo"></a>
             </div>
-        </section>
-        <section class="footer">
-            <div class="footerContainer">
-                <div class="innerfooter">
-                    <div class="leftfooter">
-                        <a href="homepage.html">
-                            <div class="imageLogo">
-                            </div>
-                        </a>
+        </nav>
+        <div class="SigninContainer">
+            <h1 class="signinTitle">
+                Sign In
+            </h1>
+            <p>Sign in to track or report campus items.</p>
+            <hr>
+            {%if messages%}
+            {%for message in messages%}
+            {%if message.tags == 'error'%}
+            <p class="errorMessage">
+                {{message}}
+            </p>{%else%}
+            <p class="successMessage">
+                {{message}}
+            </p>
+            {%endif%}
+            {%endfor%}
+            {%endif%}
+            <form action="" method="POST">
+                {%csrf_token%}
+                <div class="signinFields">
+                    <div class="userinputWrapper">
+                        <i class="bi bi-person"></i><input type="text" name="username" class="Signin_userInputs" required
+                            placeholder="username">
                     </div>
-                    <ul class="list">
-                        <li class="ListMenu">
-                            <a href="#"><i class="bi bi-house-door"></i> Home</a>
-                        </li>
-                        <li class="ListMenu">
-                            <a href="#about"><i class="bi bi-info"></i> About Us</a>
-                        </li>
-                        <li class="ListMenu">
-                            <a href="#contact"> <i class="bi bi-phone"></i> Contact Us</a>
-                        </li>
-
-                    </ul>
-                    <ul class="list">
-                        <li class="ListMenu">
-                            <a href="signup.html">Sign Up</a>
-                        </li>
-                        <li class="ListMenu">
-                            <a href="signin.html">Sign In</a>
-                        </li>
-
-                    </ul>
-                    <ul class="list">
-                        <li class="ListMenu">
-                            <i class="bi bi-facebook"></i> Follow Us on Facebook
-                        </li>
-                        <li class="ListMenu">
-                            <i class="bi bi-instagram"></i> Follow Us on Instagram
-                        </li>
-                    </ul>
+                    <div class="userinputWrapper">
+                        <i class="bi bi-lock"></i><input type="password" name="password" class="Signin_userInputs" required
+                            placeholder="Password">
+                    </div>
+                    <div class="btnSubmit">
+                        <input type="submit" value="Login" class="Loginbtn">
+                        <div class="signupOrforgotP">
+                            <a href="{% url 'signup'%}">
+                                <p>Sign Up</p>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <hr>
-                <p class="rights">©2025 Findly. All Rights Reserved.</p>
-        </section>
-        <script src="{% static 'script.js'%}"></script>
+            </form>
+
+        </div>
+    </div>
+    <section class="footer">
+        <div class="footerContainer">
+            <div class="innerfooter">
+                <div class="leftfooter">
+                    <a href="{% url 'home'%}">
+                        <div class="imageLogo">
+                        </div>
+                    </a>
+                </div>
+                <ul class="list">
+                    <li class="ListMenu">
+                        <a href="#"><i class="bi bi-house-door"></i> Home</a>
+                    </li>
+                    <li class="ListMenu">
+                        <a href="#about"><i class="bi bi-info"></i> About Us</a>
+                    </li>
+                    <li class="ListMenu">
+                        <a href="{% url 'contact' %}"> <i class="bi bi-phone"></i> Contact Us</a>
+                    </li>
+
+                </ul>
+                <ul class="list">
+                    <li class="ListMenu">
+                        <i class="bi bi-facebook"></i> Follow Us on Facebook
+                    </li>
+                    <li class="ListMenu">
+                        <i class="bi bi-instagram"></i> Follow Us on Instagram
+                    </li>
+                </ul>
+            </div>
+            <hr>
+            <p class="rights">©2025 Findly. All Rights Reserved.</p>
+    </section>
+    <script src="{% static 'script.js'%}"></script>
 </body>
 
 </html>
