@@ -139,13 +139,13 @@ USE_TZ = True
 STATIC_URL = "static/"
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 STATIC_ROOT = os.path.join("static")
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dkugvjzau',
-    'API_KEY': '584184385553147',
-    'API_SECRET': '8jRyB1zy795WrpRzlNXlHLiWFW0'
+    'CLOUD_NAME': os.environ.get('dkugvjzau'),
+    'API_KEY': os.environ.get('584184385553147'),
+    'API_SECRET': os.environ.get('8jRyB1zy795WrpRzlNXlHLiWFW0'),
 }
 
 # Default primary key field type
