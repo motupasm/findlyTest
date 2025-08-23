@@ -135,6 +135,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
+from dotenv import load_dotenv
+
+load_dotenv(dotenv_path=BASE_DIR / ".env")
 
 STATIC_URL = "static/"
 MEDIA_URL = "/media/"
@@ -143,9 +146,9 @@ DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 STATIC_ROOT = os.path.join("static")
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dkugvjzau',
-    'API_KEY': '584184385553147',
-    'API_SECRET': '8jRyB1zy795WrpRzlNXlHLiWFW0',
+    "CLOUD_NAME": os.getenv("CLOUDINARY_CLOUD_NAME"),
+    "API_KEY": os.getenv("CLOUDINARY_API_KEY"),
+    "API_SECRET": os.getenv("CLOUDINARY_API_SECRET"),
 }
 
 # Default primary key field type
