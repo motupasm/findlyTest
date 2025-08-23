@@ -24,7 +24,7 @@
             <h1 class="signinTitle">
                 Found Items
             </h1>
-            <form action="{%url 'search'%}" method="POST">
+            <form action="{%url 'search'%}" method="POST" enctype="multipart/form-data">
                 <div class="searchwrapper">
                     {%csrf_token%}
                     <i class="bi bi-search"></i><input type="search" placeholder="Search by item type or description..."
