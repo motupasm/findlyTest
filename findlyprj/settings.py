@@ -143,9 +143,9 @@ DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 STATIC_ROOT = os.path.join("static")
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.environ.get('dkugvjzau'),
-    'API_KEY': os.environ.get('584184385553147'),
-    'API_SECRET': os.environ.get('8jRyB1zy795WrpRzlNXlHLiWFW0'),
+    'CLOUD_NAME': 'dkugvjzau',
+    'API_KEY': '584184385553147',
+    'API_SECRET': '8jRyB1zy795WrpRzlNXlHLiWFW0',
 }
 
 # Default primary key field type
