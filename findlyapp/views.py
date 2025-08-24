@@ -5,8 +5,8 @@ from django.core.mail import send_mail
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
-from .utils.imagekit import upload_to_imagekit
 from django.contrib.auth.decorators import login_required
+from .utils.cloudinary_utils import upload_to_cloudinary
 
 # Create your views here.
 
@@ -30,14 +30,14 @@ def returnItemviews(request):
         location_found = request.POST.get("location_found")
         date_found = request.POST.get("date_found")
         item_image = request.FILES.get("item_image")
-        image_file = request.FILES.get("item_image")
+
         
-        if not image_file:
+        if not item_image:
             messages.error(request, "Please upload an image.")
             return redirect("returnitem")
 
         try:
-            image_url = upload_to_imagekit(image_file)
+            image_url = upload_to_cloudinary(item_image)
         except Exception as e:
             messages.error(request, f"Image upload failed: {e}")
             return redirect("returnitem")
@@ -47,8 +47,7 @@ def returnItemviews(request):
             item_description=item_description,
             location_found=location_found,
             date_found=date_found,
-            item_image=item_image,
-            image_url=image_file,
+            item_image=image_url,  # Save URL returned by Cloudinary
         )
         returnItemInput.save()
         messages.success(request, "Thank You for Returning the Lost Item")
