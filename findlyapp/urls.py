@@ -12,7 +12,6 @@ urlpatterns = [
     path("search/", views.search, name="search"),
     path("contact/", views.contact, name="contact"),
     path("logout/", views.logoutviews, name="logout"),
-    path("test-storage/", views.test_storage, name="test_storage"),
 ]
 
 if settings.DEBUG:

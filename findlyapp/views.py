@@ -6,25 +6,8 @@ from django.conf import settings
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
-from django.core.files.storage import default_storage
 
 # Create your views here.
-
-
-
-
-def test_storage(request):
-    return HttpResponse(f"Storage backend class: {default_storage.__class__.__name__}")
-
-
-
-
-
-
-
-
-
 
 
 def home(request):
@@ -40,9 +23,6 @@ def searchItem(request):
 
 @login_required(login_url="signin")
 def returnItemviews(request):
-    from django.conf import settings
-    print("DEFAULT_FILE_STORAGE is:", settings.DEFAULT_FILE_STORAGE)
-
     if request.method == "POST":
         item_type = request.POST.get("item_type")
         item_description = request.POST.get("item_description")
