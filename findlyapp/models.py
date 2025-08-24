@@ -8,6 +8,7 @@ class returnItemModel(models.Model):
     location_found = models.CharField(max_length=15)
     date_found = models.CharField(max_length=15)
     item_image = models.ImageField(upload_to="items", default="fallback.jpg")
+    image_url = models.URLField()
     approval = models.BooleanField("approval", default=False)
 
     def __str__(self):
