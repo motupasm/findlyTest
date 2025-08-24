@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "findlyapp",
+    'storages'
 ]
 
 
@@ -139,6 +140,19 @@ STATIC_URL = "static/"
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 STATIC_ROOT = os.path.join("static")
+
+import os
+
+# Default file storage
+DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+
+# Supabase bucket settings (treat as S3)
+AWS_ACCESS_KEY_ID = os.getenv("SUPABASE_ACCESS_KEY")
+AWS_SECRET_ACCESS_KEY = os.getenv("SUPABASE_SECRET_KEY")
+AWS_STORAGE_BUCKET_NAME = "findly_app_bucket"   # name of your bucket
+AWS_S3_ENDPOINT_URL = "https://ormccvoggndedsbmnrlr.storage.supabase.co/storage/v1/s3"
+AWS_QUERYSTRING_AUTH = False  # if bucket is public, keep False
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
