@@ -15,6 +15,7 @@ class SupabaseStorage(Storage):
         }
 
     def _save(self, name, content):
+        print(f"🔄 Uploading '{name}' to Supabase...")
         upload_url = f"{self.project_url}/storage/v1/object/{self.bucket}/{name}"
         headers = self._get_headers()
         response = requests.post(
