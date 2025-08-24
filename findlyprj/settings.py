@@ -137,18 +137,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = "static/"
-MEDIA_URL = "/media/"
+# MEDIA_URL = "/media/"    # <-- REMOVE this line or comment it out
+
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 STATIC_ROOT = os.path.join("static")
 
-import os
-
-# Default file storage
 DEFAULT_FILE_STORAGE = "findlyapp.storage_backends.SupabaseStorage"
 
 SUPABASE_URL = "https://ormccvoggndedsbmnrlr.supabase.co"
-SUPABASE_API_KEY = os.getenv("SUPABASE_API_KEY")  # Use anon key if public bucket
-SUPABASE_BUCKET = "media"  # Or your bucket name
+SUPABASE_API_KEY = os.getenv("SUPABASE_API_KEY")
+SUPABASE_BUCKET = "media"
 
 MEDIA_URL = f"{SUPABASE_URL}/storage/v1/object/public/{SUPABASE_BUCKET}/"
 # Default primary key field type
