@@ -15,12 +15,14 @@ def upload_to_imagekit(file, file_name=None):
     }
     unique_name = file_name or f"{uuid.uuid4().hex}_{file.name}"
 
-    files = {
-        "file": file,
+    data = {
         "fileName": unique_name,
     }
+    files = {
+        "file": file,
+    }
 
-    response = requests.post(url, headers=headers, files=files)
+    response = requests.post(url, headers=headers, files=files , data=data)
 
     if response.status_code == 200:
         return response.json()["url"]
