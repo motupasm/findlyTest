@@ -23,6 +23,9 @@ def searchItem(request):
 
 @login_required(login_url="signin")
 def returnItemviews(request):
+    from django.conf import settings
+    print("DEFAULT_FILE_STORAGE is:", settings.DEFAULT_FILE_STORAGE)
+
     if request.method == "POST":
         item_type = request.POST.get("item_type")
         item_description = request.POST.get("item_description")
