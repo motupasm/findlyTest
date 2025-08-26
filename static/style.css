@@ -56,12 +56,6 @@ a {
   align-items: center;
   padding: 1rem 5rem;
 }
-.bi-person-circle {
-  font-size: 35px;
-  color: #4d6bfe;
-  cursor: pointer;
-  /* display: ; */
-}
 .findlyLogo {
   width: 55px;
   height: 55px;
@@ -1143,5 +1137,6 @@ form .searchwrapper {
     display: block;
    }
 }
+
 
 

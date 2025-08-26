@@ -1,7 +1,7 @@
 // ---------------NAVBAR CONTROL---------------------
 
-const profileIcon = document.getElementById("person-circle");
-const sidebar = document.getElementById("side-navbar");
+// const profileIcon = document.getElementById("person-circle");
+// const sidebar = document.getElementById("side-navbar");
 const navOpen = document.querySelector(".bi-list-nested");
 const leftSideBar = document.querySelector(".left-side-navbar");
 const navclose = document.querySelector(".bi-x-lg");
@@ -10,9 +10,6 @@ const sideBarMenu = document.querySelectorAll(".items");
 
 signInclose.addEventListener("click", (e) => {
   sidebar.classList.toggle("close");
-});
-profileIcon.addEventListener("click", (e) => {
-  sidebar.classList.toggle("hidden");
 });
 
 navOpen.addEventListener("click", (e) => {
