@@ -38,7 +38,7 @@ def returnItemviews(request):
             item_image=item_image,
         )
         returnItemInput.save()
-        messages.success(request, "Thank You for Returning the Lost Item")
+        messages.success(request, "Your item has been reported and is pending review. Please wait for admin approval.")
         return redirect("returnitem")
     return render(request, "returnitem.html")
 

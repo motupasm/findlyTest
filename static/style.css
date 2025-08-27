@@ -1137,6 +1137,13 @@ form .searchwrapper {
     display: block;
    }
 }
-
+.Rheader{
+  display: flex;
+  align-items: center;
+}
+.Rheader p{
+  display: flex;
+  align-items: center;
+}
 
 
