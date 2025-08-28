@@ -12,6 +12,7 @@ urlpatterns = [
     path("search/", views.search, name="search"),
     path("contact/", views.contact, name="contact"),
     path("logout/", views.logoutviews, name="logout"),
+    path('healthz/' , views.healthz , name='healthz')
 ]
 
 if settings.DEBUG:

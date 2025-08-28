@@ -6,6 +6,7 @@ from django.conf import settings
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
 
 # Create your views here.
 
@@ -171,3 +172,7 @@ def contact(request):
             return redirect(contact)
 
     return render(request, "contact.html")
+
+
+def healthz(request):
+    return JsonResponse({"status" : "ok"})
