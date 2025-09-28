@@ -22,6 +22,35 @@ body {
   background-repeat: no-repeat;
   width: 100%;
 }
+@-webkit-keyframes kenburns-top {
+  0% {
+    -webkit-transform: scale(1) translateY(0);
+    transform: scale(1) translateY(0);
+    -webkit-transform-origin: 50% 16%;
+    transform-origin: 50% 16%;
+  }
+  100% {
+    -webkit-transform: scale(1.25) translateY(-15px);
+    transform: scale(1.25) translateY(-15px);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+  }
+}
+@keyframes kenburns-top {
+  0% {
+    -webkit-transform: scale(1) translateY(0);
+    transform: scale(1) translateY(0);
+    -webkit-transform-origin: 50% 16%;
+    transform-origin: 50% 16%;
+  }
+  100% {
+    -webkit-transform: scale(1.25) translateY(-15px);
+    transform: scale(1.25) translateY(-15px);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+  }
+}
+
 li,
 a {
   text-decoration: none;
@@ -294,7 +323,6 @@ a {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-
 }
 .picture {
   width: 23rem;
@@ -308,21 +336,34 @@ a {
   animation: fadeInUp 0.6s ease-out forwards;
   -webkit-animation: fadeInUp 0.6s ease-out forwards;
 }
+.picture {
+  width: 23rem;
+  height: 15rem;
+  border-radius: 16px;
+  z-index: 1;
+  position: relative;
+  border-left: #4d6bfe 5px solid;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.488);
+  cursor: pointer;
+  animation: fadeInUp 0.6s ease-out forwards;
+  -webkit-animation: fadeInUp 0.6s ease-out forwards;
+}
+
 .softpic:hover {
   background-color: rgba(0, 0, 0, 0.848);
 }
-.picture:nth-child(1) {
+/* .picture:nth-child(2) {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-image: url(Assets/return.jpg);
 }
-.picture:nth-child(2) {
+.briefItem .picture:nth-child(1) {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-image: url(Assets/view.png);
-}
+} */
 .shortBrief {
   width: 50%;
   font-size: 1.1rem;
@@ -559,11 +600,11 @@ a {
   height: 100vh;
   transition: 400ms ease-in-out;
 }
-.successMessage{
+.successMessage {
   color: green;
   font-size: 14px;
 }
-.errorMessage{
+.errorMessage {
   color: red;
   font-size: 14px;
 }
@@ -1015,7 +1056,9 @@ form .searchwrapper {
   .findlyOverviewtext,
   .footerContainer,
   .footerContainer hr,
-  .left-side-navbar hr, .downloadApp input,.SigninContainer {
+  .left-side-navbar hr,
+  .downloadApp input,
+  .SigninContainer {
     margin: 1rem auto;
   }
   .bi-person-circle {
@@ -1024,11 +1067,10 @@ form .searchwrapper {
   .SigninContainer {
     width: 90%;
   }
-  .forSmallScreen #bi-toggle-off{
+  .forSmallScreen #bi-toggle-off {
     display: block;
-   }
+  }
 }
-
 
 /* Extra small devices */
 @media (max-width: 480px) {
@@ -1113,7 +1155,8 @@ form .searchwrapper {
   .findlyOverviewtext,
   .footerContainer,
   .footerContainer hr,
-  .left-side-navbar hr,.SigninContainer {
+  .left-side-navbar hr,
+  .SigninContainer {
     margin: 1rem auto;
   }
   .top-navbar-container {
@@ -1133,9 +1176,7 @@ form .searchwrapper {
     justify-self: center;
     margin: 0 auto;
   }
-  .forSmallScreen #bi-toggle-off{
+  .forSmallScreen #bi-toggle-off {
     display: block;
-   }
+  }
 }
-
-

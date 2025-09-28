@@ -78,6 +78,7 @@ def singinItemviews(request):
 
 
 def singupItemviews(request):
+    first_name = ''
     if request.method == "POST":
         first_name = request.POST.get("first_name")
         email = request.POST.get("email")
@@ -126,7 +127,7 @@ def singupItemviews(request):
             [email],
             fail_silently=True,
         )
-        return redirect("signup")
+        return redirect("signin")
     return render(request, "signup.html")
 
 
